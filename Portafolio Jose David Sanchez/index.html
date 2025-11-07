@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jose David</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: "Cursed Cavalcade";
+      src: url("fonts/CursedCavalcade-xRxwm.ttf") format("truetype");
+      font-display: swap;
+    }
+    body {
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      background: url("fondo.jpg") center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(2px);
+      color: #d6d6d6;
+    }
+    .cursed {
+      font-family: "Cursed Cavalcade", "Trebuchet MS", sans-serif;
+    }
+  </style>
+</head>
+<body class="m-0 p-0">
+
+  <img src="asuka.gif" id="bounce-gif" alt="rebota" class="fixed w-[100px] h-auto z-[1000] pointer-events-none opacity-85">
+
+  <header class="bg-black/70 border-b border-white text-center py-6 px-3 shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
+    <div>
+      <h1 class="cursed text-[#d42323] text-[2.8rem] uppercase tracking-[3px] m-0 drop-shadow-[1px_1px_5px_#000]">Jose David</h1>
+      <p class="text-[#888] text-[0.95rem] italic mt-2">blog personal // futuro ingeniero // nostalfag</p>
+    </div>
+    <nav>
+      <ul class="list-none flex justify-center gap-[25px] mt-4 p-0">
+        <li><a href="#inicio" class="text-white font-bold lowercase no-underline hover:text-[#a35aa3] transition-colors duration-300">Inicio</a></li>
+        <li><a href="#sobre-mi" class="text-white font-bold lowercase no-underline hover:text-[#a35aa3] transition-colors duration-300">Sobre mí</a></li>
+        <li><a href="#contacto" class="text-white font-bold lowercase no-underline hover:text-[#a35aa3] transition-colors duration-300">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="flex flex-col items-center text-center py-20 px-5 bg-black/55 border-y border-[#222]">
+      <img src="me.jpg" alt="Jose David" class="w-[170px] h-[170px] border-[4px] border-[#d42323] shadow-[0_0_15px_rgba(0,0,0,0.8)] mb-5" style="filter: grayscale(20%) contrast(110%);">
+      <div class="max-w-[550px]">
+        <h2 class="text-white text-[1.8rem] mb-2">Hey, soy <span class="text-[#d42323] cursed">Jose</span></h2>
+        <p class="text-white text-[0.95rem] leading-[1.5]">Estudiante de sistemas me gusta el frontend, el mantenimiento y todo lo que tenga cables</p>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="py-[60px] px-5 text-center bg-[rgba(15,15,15,0.65)] border-t border-[#222]">
+      <h2 class="text-white text-[1.6rem] mb-[25px] drop-shadow-[0_0_5px_#000] cursed">✦ Sobre mí ✦</h2>
+      <p class="max-w-[600px] mx-auto text-white leading-[1.6] text-[0.95rem]">Tengo 21 años, soy de Colombia, y paso mi tiempo haciendo research y reparando cosas.  
+      Me gusta crear cosas, pero también entender cómo funcionan por dentro.</p>
+    </section>
+
+    <section id="contacto" class="py-[60px] px-5 text-center bg-[rgba(15,15,15,0.65)] border-t border-[#222]">
+      <h2 class="text-white text-[1.6rem] mb-[25px] drop-shadow-[0_0_5px_#000] cursed">xX Contacto Xx</h2>
+      <p class="max-w-[600px] mx-auto text-white leading-[1.6] text-[0.95rem]"><strong>Email:</strong> jdsanchez_usistemas@intep.edu.co</p>
+      <p class="max-w-[600px] mx-auto text-white leading-[1.6] text-[0.95rem]"><strong>GitHub:</strong> <a href="https://github.com/JoseDavSO" target="_blank" class="text-[#d42323] font-bold hover:underline">github.com/JoseDavSO</a></p>
+      <p class="max-w-[600px] mx-auto text-white leading-[1.6] text-[0.95rem]"><strong>Ubicación:</strong> Col</p>
+    </section>
+  </main>
+
+  <footer class="bg-black/85 text-[#777] text-center py-5 text-[0.85rem] border-t border-[#333] tracking-[1px]">
+    <p>© 2025 𖤐Jose𖤐</p>
+  </footer>
+
+  <script>
+    const gif = document.getElementById("bounce-gif");
+    let x = 100, y = 100, dx = 2, dy = 2;
+    function moveGif() {
+      const vw = window.innerWidth - gif.offsetWidth;
+      const vh = window.innerHeight - gif.offsetHeight;
+      x += dx; y += dy;
+      if (x <= 0 || x >= vw) dx = -dx;
+      if (y <= 0 || y >= vh) dy = -dy;
+      gif.style.left = x + 'px';
+      gif.style.top = y + 'px';
+      requestAnimationFrame(moveGif);
+    }
+    moveGif();
+  </script>
+
+</body>
+</html>
