@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Manuel - Portafolio</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #4F46E5, #10B981);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover::before {
+            transform: translateX(0);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #4F46E5;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #4F46E5 }
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Estilos para el fondo con imagen y degradado */
+        .hero-bg {
+            background: 
+                linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%),
+                url('img/fondo-hero.jpg') center/cover no-repeat;
+            position: relative;
+        }
+        
+        /* Alternativa si quieres el degradado más pronunciado */
+        .hero-bg-alternative {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(15, 23, 42, 0.95) 0%, 
+                    rgba(30, 41, 59, 0.85) 50%, 
+                    rgba(15, 23, 42, 0.9) 100%),
+                url('img/fondo-hero.jpg') center/cover no-repeat;
+        }
+        
+        /* Efecto de partículas sutiles en el fondo */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 py-4 px-6 flex justify-between items-center bg-slate-900 shadow-lg">
+        <div class="text-xl font-bold">
+            <span class="text-white">Juan</span><span class="text-indigo-400">Manuel</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+            <a href="#inicio" class="nav-link text-gray-300 font-medium hover:text-white">Inicio</a>
+            <a href="#sobre-mi" class="nav-link text-gray-300 font-medium hover:text-white">Sobre Mí</a>
+            <a href="#habilidades" class="nav-link text-gray-300 font-medium hover:text-white">Habilidades</a>
+            <a href="#proyectos" class="nav-link text-gray-300 font-medium hover:text-white">Proyectos</a>
+            <a href="#contacto" class="nav-link text-gray-300 font-medium hover:text-white">Contacto</a>
+        </div>
+        <div class="md:hidden text-gray-300">
+            <i class="fas fa-bars text-xl"></i>
+        </div>
+    </nav>
+
+    <!-- Sección Hero con fondo personalizable -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center hero-bg pt-16 relative">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <div class="relative">
+                    <div class="text-4xl md:text-6xl font-bold mb-4">
+                        <h1 class="text-white">Hola, soy</h1>
+                        <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400 typewriter">Juan Manuel</h1>
+                    </div>
+                    <p class="text-xl text-gray-300 mb-8">Estudiante de Ingeniería en Sistemas</p>
+                    <div class="flex space-x-4">
+                        <a href="#proyectos" class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-700 rounded-lg font-medium text-white hover:shadow-lg transition-all duration-300">
+                            Ver Proyectos
+                        </a>
+                        <a href="#contacto" class="px-6 py-3 glass-card border border-indigo-500 text-indigo-400 rounded-lg font-medium hover:bg-indigo-500/10 transition-all duration-300">
+                            Contactar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-slate-600/50 shadow-2xl floating">
+                        <img src="img/io.jpg" alt="Juan Manuel" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Elemento decorativo alrededor de la foto -->
+                    <div class="absolute -inset-4 rounded-full bg-gradient-to-r from-indigo-500/20 to-emerald-500/20 blur-xl -z-10"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <a href="#sobre-mi" class="text-indigo-400 text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Sobre <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Mí</span></h2>
+            
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <div class="glass-card p-8 rounded-2xl shadow-lg card-hover">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Mi Historia</h3>
+                        <div class="space-y-4 text-gray-400">
+                            <p>Soy Juan Manuel, colombiano y constructor de realidades digitales. Como estudiante de ingeniería en sistemas, me especializo en el frontend porque creo que la tecnología debe ser tan hermosa como funcional.</p>
+                            <p>Soy un traductor que convierte ideas complejas en experiencias intuitivas, donde cada píxel tiene propósito y cada interacción cuenta una historia. Mi mayor satisfacción es ver cómo el código abstracto se transforma en algo vivo que dialoga con las personas a través del navegador.</p>
+                        </div>
+                        
+                        <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-amber-900/30 p-4 rounded-xl border border-amber-700/50">
+                                <div class="text-2xl font-bold text-amber-400">2+</div>
+                                <div class="text-sm text-amber-300">Proyectos</div>
+                            </div>
+                            <div class="bg-orange-900/30 p-4 rounded-xl border border-orange-700/50">
+                                <div class="text-2xl font-bold text-orange-400">2+</div>
+                                <div class="text-sm text-orange-300">Años de Estudio</div>
+                            </div>
+                            <div class="bg-red-900/30 p-4 rounded-xl border border-red-700/50">
+                                <div class="text-2xl font-bold text-red-400">100%</div>
+                                <div class="text-sm text-red-300">Dedicación</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-card p-6 rounded-xl shadow-lg text-center card-hover">
+                            <div class="w-16 h-16 bg-indigo-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-graduation-cap text-2xl text-indigo-400"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Estudiante</h3>
+                            <p class="text-gray-400">Ingeniería en Sistemas</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl shadow-lg text-center card-hover">
+                            <div class="w-16 h-16 bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-code text-2xl text-green-400"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Desarrollador</h3>
+                            <p class="text-gray-400">Frontend</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl shadow-lg text-center card-hover">
+                            <div class="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-lightbulb text-2xl text-blue-400"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Solucionador</h3>
+                            <p class="text-gray-400">De problemas</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl shadow-lg text-center card-hover">
+                            <div class="w-16 h-16 bg-purple-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-rocket text-2xl text-purple-400"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">En crecimiento</h3>
+                            <p class="text-gray-400">Constante aprendizaje</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Mis <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Habilidades</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Tecnologías Principales</h3>
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-orange-900/50 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-html5 text-2xl text-orange-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">HTML5</h4>
+                                    <p class="text-gray-400">Estructura web semántica</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-css3-alt text-2xl text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">CSS3</h4>
+                                    <p class="text-gray-400">Estilos y diseño responsive</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-yellow-900/50 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-js-square text-2xl text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">JavaScript</h4>
+                                    <p class="text-gray-400">Interactividad y dinamismo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-cyan-900/50 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-wind text-2xl text-cyan-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">Tailwind CSS</h4>
+                                    <p class="text-gray-400">Framework de CSS utility-first</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Otras Tecnologías</h3>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="glass-card p-4 rounded-xl shadow text-center card-hover">
+                            <i class="fab fa-git-alt text-3xl text-orange-400 mb-2"></i>
+                            <div class="font-medium text-white">Git</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl shadow text-center card-hover">
+                            <i class="fab fa-github text-3xl text-gray-300 mb-2"></i>
+                            <div class="font-medium text-white">GitHub</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl shadow text-center card-hover">
+                            <i class="fas fa-code text-3xl text-blue-400 mb-2"></i>
+                            <div class="font-medium text-white">VS Code</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl shadow text-center card-hover">
+                            <i class="fab fa-figma text-3xl text-purple-400 mb-2"></i>
+                            <div class="font-medium text-white">Figma</div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold my-6 text-white">En Aprendizaje</h3>
+                    <div class="flex space-x-4">
+                        <div class="glass-card p-4 rounded-xl shadow text-center flex-1 card-hover">
+                            <i class="fab fa-node-js text-3xl text-green-500 mb-2"></i>
+                            <div class="font-medium text-white">Node.js</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl shadow text-center flex-1 card-hover">
+                            <i class="fas fa-database text-3xl text-green-400 mb-2"></i>
+                            <div class="font-medium text-white">MongoDB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Mis <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-500">Proyectos</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="glass-card p-6 rounded-2xl shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-paw text-white text-6xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Veterinaria Online</h3>
+                    <p class="text-gray-400 mb-4">Una página web funcional que permite tener contacto con ayuda médica veterinaria.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm skill-tag">HTML</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm skill-tag">CSS</span>
+                        <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 rounded-full text-sm skill-tag">JavaScript</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-700 rounded-lg font-medium text-white hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        <span>Ver Proyecto</span>
+                    </a>
+                </div>
+                
+                <div class="glass-card p-6 rounded-2xl shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-br from-emerald-600 to-cyan-700 rounded-xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-white text-6xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Tienda Online</h3>
+                    <p class="text-gray-400 mb-4">Una aplicación de comercio electrónico con carrito de compras y sistema de pagos.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm skill-tag">HTML</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm skill-tag">CSS</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm skill-tag">JavaScript</span>
+                        <span class="px-3 py-1 bg-emerald-900/50 text-emerald-300 rounded-full text-sm skill-tag">Node.js</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-600 to-cyan-700 rounded-lg font-medium text-white hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        <span>Ver Proyecto</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Contáct<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">ame</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Trabajemos Juntos</h3>
+                    <p class="text-gray-400 mb-8">¿Tienes una idea o proyecto? ¡Hablemos sobre cómo puedo ayudarte!</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-900/50 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Email</p>
+                                <p class="text-white font-medium">cdmx777.09@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-900/50 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Teléfono</p>
+                                <p class="text-white font-medium">+57 316 524 1568</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-900/50 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Ubicación</p>
+                                <p class="text-white font-medium">Roldanillo Valle del Cauca, Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4 mt-8">
+                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-gray-300 hover:bg-slate-600 transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-gray-300 hover:bg-slate-600 transition-all duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-gray-300 hover:bg-slate-600 transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-gray-300 hover:bg-slate-600 transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl shadow-lg">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-gray-300 mb-2">Tu nombre</label>
+                            <input type="text" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white" placeholder="Juan Pérez">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Tu email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white" placeholder="juan@ejemplo.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Tu mensaje</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white" placeholder="Hola, me gustaría contactarte acerca de..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-lg font-medium text-white hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            <span>Enviar Mensaje</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-900 text-gray-400 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2024 Juan Manuel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para los enlaces de navegación
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
