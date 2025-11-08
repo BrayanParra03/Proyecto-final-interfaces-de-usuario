@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Manuel - Portafolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80">
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">
+                <span class="text-white">Juan</span><span class="text-primary">Manuel</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero-section min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="hero-content">
+                        <h1 class="hero-title mb-4">
+                            <span class="d-block text-white">Hola, soy</span>
+                            <span class="gradient-text typewriter">Juan Manuel</span>
+                        </h1>
+                        <p class="hero-subtitle mb-4">Estudiante de Ingeniería en Sistemas</p>
+                        <div class="hero-buttons">
+                            <a href="#proyectos" class="btn btn-primary btn-lg me-3">Ver Proyectos</a>
+                            <a href="#contacto" class="btn btn-outline-primary btn-lg">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image-container">
+                        <div class="profile-image-wrapper floating">
+                            <img src="img/io.jpg" alt="Juan Manuel" class="profile-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#sobre-mi" class="text-primary">
+                <i class="fas fa-chevron-down fa-2x"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="py-5 about-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Sobre <span class="gradient-text-amber">Mí</span></h2>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="glass-card p-4 h-100">
+                        <h3 class="section-subtitle mb-4">Mi Historia</h3>
+                        <div class="about-text">
+                            <p class="mb-3">Soy Juan Manuel, colombiano y constructor de realidades digitales. Como estudiante de ingeniería en sistemas, me especializo en el frontend porque creo que la tecnología debe ser tan hermosa como funcional.</p>
+                            <p class="mb-4">Soy un traductor que convierte ideas complejas en experiencias intuitivas, donde cada píxel tiene propósito y cada interacción cuenta una historia. Mi mayor satisfacción es ver cómo el código abstracto se transforma en algo vivo que dialoga con las personas a través del navegador.</p>
+                        </div>
+                        
+                        <div class="row text-center stats-container">
+                            <div class="col-4">
+                                <div class="stat-card">
+                                    <div class="stat-number text-amber">2+</div>
+                                    <div class="stat-label">Proyectos</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-card">
+                                    <div class="stat-number text-orange">2+</div>
+                                    <div class="stat-label">Años de Estudio</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-card">
+                                    <div class="stat-number text-red">100%</div>
+                                    <div class="stat-label">Dedicación</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="feature-card text-center glass-card p-4 h-100">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h4 class="feature-title">Estudiante</h4>
+                                <p class="feature-text">Ingeniería en Sistemas</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card text-center glass-card p-4 h-100">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h4 class="feature-title">Desarrollador</h4>
+                                <p class="feature-text">Frontend</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card text-center glass-card p-4 h-100">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h4 class="feature-title">Solucionador</h4>
+                                <p class="feature-text">De problemas</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card text-center glass-card p-4 h-100">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h4 class="feature-title">En crecimiento</h4>
+                                <p class="feature-text">Constante aprendizaje</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="py-5 skills-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Mis <span class="gradient-text-emerald">Habilidades</span></h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h3 class="skills-subtitle mb-4">Tecnologías Principales</h3>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="skill-card glass-card p-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="skill-icon html me-4">
+                                        <i class="fab fa-html5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="skill-name">HTML5</h4>
+                                        <p class="skill-description">Estructura web semántica</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="skill-card glass-card p-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="skill-icon css me-4">
+                                        <i class="fab fa-css3-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="skill-name">CSS3</h4>
+                                        <p class="skill-description">Estilos y diseño responsive</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="skill-card glass-card p-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="skill-icon js me-4">
+                                        <i class="fab fa-js-square"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="skill-name">JavaScript</h4>
+                                        <p class="skill-description">Interactividad y dinamismo</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="skill-card glass-card p-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="skill-icon tailwind me-4">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="skill-name">Tailwind CSS</h4>
+                                        <p class="skill-description">Framework de CSS utility-first</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h3 class="skills-subtitle mb-4">Otras Tecnologías</h3>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="tech-card text-center glass-card p-3">
+                                <i class="fab fa-git-alt tech-icon mb-2"></i>
+                                <div class="tech-name">Git</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tech-card text-center glass-card p-3">
+                                <i class="fab fa-github tech-icon mb-2"></i>
+                                <div class="tech-name">GitHub</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tech-card text-center glass-card p-3">
+                                <i class="fas fa-code tech-icon mb-2"></i>
+                                <div class="tech-name">VS Code</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tech-card text-center glass-card p-3">
+                                <i class="fab fa-figma tech-icon mb-2"></i>
+                                <div class="tech-name">Figma</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="skills-subtitle mb-4">En Aprendizaje</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="learning-card text-center glass-card p-4">
+                                <i class="fab fa-node-js learning-icon mb-2"></i>
+                                <div class="learning-name">Node.js</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="learning-card text-center glass-card p-4">
+                                <i class="fas fa-database learning-icon mb-2"></i>
+                                <div class="learning-name">MongoDB</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="py-5 projects-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Mis <span class="gradient-text-rose">Proyectos</span></h2>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="project-card glass-card p-4 h-100">
+                        <div class="project-image mb-4">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <h3 class="project-title mb-3">Veterinaria Online</h3>
+                        <p class="project-description mb-4">Una página web funcional que permite tener contacto con ayuda médica veterinaria.</p>
+                        <div class="project-tags mb-4">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="project-card glass-card p-4 h-100">
+                        <div class="project-image mb-4 emerald">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="project-title mb-3">Tienda Online</h3>
+                        <p class="project-description mb-4">Una aplicación de comercio electrónico con carrito de compras y sistema de pagos.</p>
+                        <div class="project-tags mb-4">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Node.js</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Ver Proyecto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-5 contact-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contáct<span class="gradient-text-blue">ame</span></h2>
+            
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <h3 class="contact-subtitle mb-4">Trabajemos Juntos</h3>
+                    <p class="contact-text mb-5">¿Tienes una idea o proyecto? ¡Hablemos sobre cómo puedo ayudarte!</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item d-flex align-items-center mb-4">
+                            <div class="contact-icon me-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="contact-label">Email</p>
+                                <p class="contact-value">cdmx777.09@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item d-flex align-items-center mb-4">
+                            <div class="contact-icon me-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="contact-label">Teléfono</p>
+                                <p class="contact-value">+57 316 524 1568</p>
+                            </div>
+                        </div>
+                        <div class="contact-item d-flex align-items-center mb-4">
+                            <div class="contact-icon me-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="contact-label">Ubicación</p>
+                                <p class="contact-value">Roldanillo Valle del Cauca, Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links d-flex gap-3 mt-4">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="glass-card p-4">
+                        <form class="contact-form">
+                            <div class="mb-4">
+                                <label class="form-label">Tu nombre</label>
+                                <input type="text" class="form-control" placeholder="Juan Pérez" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Tu email</label>
+                                <input type="email" class="form-control" placeholder="juan@ejemplo.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Tu mensaje</label>
+                                <textarea class="form-control" rows="4" placeholder="Hola, me gustaría contactarte acerca de..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-paper-plane me-2"></i>
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center footer-section">
+        <div class="container">
+            <p>&copy; 2024 Juan Manuel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
