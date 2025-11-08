@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio - Juliana Osorio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mint: '#bce3c9',
+            blush: '#f9dce0',
+            ivory: '#fffaf5',
+            rose: '#e67288',
+          },
+          fontFamily: {
+            sans: ['Quicksand', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fffaf5;
+      scroll-behavior: smooth;
+    }
+
+    /* Animaciones suaves */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800 bg-ivory">
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-mint z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+      <h1 class="text-2xl font-serif text-rose">Juliana <span class="text-mint">Osorio</span></h1>
+      <nav class="hidden md:flex gap-6 text-gray-700 font-medium">
+        <a href="#inicio" class="hover:text-rose">Inicio</a>
+        <a href="#sobre-mi" class="hover:text-rose">Sobre mí</a>
+        <a href="#proyectos" class="hover:text-rose">Proyectos</a>
+        <a href="#contacto" class="hover:text-rose">Contacto</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-mint">
+      <nav class="flex flex-col text-center py-3 gap-3">
+        <a href="#inicio" class="text-gray-700 hover:text-rose">Inicio</a>
+        <a href="#sobre-mi" class="text-gray-700 hover:text-rose">Sobre mí</a>
+        <a href="#proyectos" class="text-gray-700 hover:text-rose">Proyectos</a>
+        <a href="#contacto" class="text-gray-700 hover:text-rose">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+<section id="inicio" class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-28 relative overflow-hidden">
+  <!-- Fondo floral -->
+  <div class="absolute inset-0 -z-10 bg-[url('./img/fondo.jpg')] bg-cover bg-center opacity-40"></div>
+
+    <!-- Foto --> 
+    <div class="relative fade-in-up">
+      <div class="p-2 rounded-full bg-gradient-to-tr from-mint via-blush to-rose shadow-lg">
+        <img src="img/juliana2.jpg" alt="Juliana Osorio"
+             class="w-64 h-64 md:w-72 md:h-72 rounded-full object-cover border-8 border-white shadow-2xl">
+      </div>
+      <img src="img/florosada.png" alt="decoración floral" 
+           class="absolute -top-12 -right-12 w-32 opacity-80 rotate-12" />
+      <img src="img/florosada.png" alt="decoración floral" 
+           class="absolute -bottom-12 -left-12 w-32 opacity-80 -rotate-12" />
+    </div>
+
+    <h1 class="mt-10 text-4xl md:text-5xl font-serif text-rose fade-in-up">Juliana Osorio</h1>
+<p class="mt-3 text-lg text-gray-700 max-w-xl fade-in-up">
+  Estudiante de <span class="text-emerald-600 font-semibold">Tecnología en Sistemas</span>, apasionada por el diseño web y la creación de experiencias digitales que combinan belleza, armonía y funcionalidad.
+</p>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-4 fade-in-up">
+      <a href="#proyectos" class="px-6 py-3 rounded-full bg-mint text-gray-800 font-semibold hover:bg-rose hover:text-white transition">Ver proyectos</a>
+      <a href="#contacto" class="px-6 py-3 rounded-full border border-rose text-rose font-semibold hover:bg-rose hover:text-white transition">Contáctame</a>
+    </div>
+  </section>
+
+ <!-- SOBRE MÍ -->
+<!-- SOBRE MÍ -->
+<section id="sobre-mi" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-serif text-rose mb-10">Sobre Mí</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Cuadro 1 -->
+      <div class="border-2 border-rose rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Soy una profesional versátil con un 
+          <span class="font-semibold text-rose">pregrado en Psicología</span> y actualmente estudiante de 
+          <span class="font-semibold text-emerald-600">Tecnología en Sistemas</span>.  
+          Mi formación me ha permitido unir la comprensión del comportamiento humano con la lógica del desarrollo web, creando interfaces que conectan emocionalmente con los usuarios.
+        </p>
+      </div>
+
+<!-- Cuadro 2 -->
+<div class="border-2 border-emerald-500 rounded-2xl p-8 shadow-md hover:shadow-lg transition">
+  <p class="text-gray-700 text-lg leading-relaxed">
+    Me considero una persona <span class="font-semibold text-emerald-600">muy adaptable</span>, con gran curiosidad por aprender y una capacidad innata para analizar a fondo cada detalle.  
+    Mi enfoque combina creatividad, empatía y análisis, permitiéndome diseñar soluciones digitales con propósito y armonía.
+  </p>
+</div>
+
+
+    <ul class="flex flex-wrap justify-center gap-6 mt-12 text-gray-700 font-medium">
+      <li><strong class="text-rose">Edad:</strong> 20 años</li>
+      <li><strong class="text-rose">Ubicación:</strong> Colombia</li>
+      <li><strong class="text-rose">Especialidad:</strong> Diseño UI / Frontend</li>
+    </ul>
+  </div>
+</section>
+
+
+
+ <!-- PROYECTOS -->
+<section id="proyectos" class="py-24 bg-blush/40">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-serif text-rose mb-10">Proyectos Destacados</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Proyecto 1 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="img/sistemamedico.jpg" alt="Proyecto de Citas Médicas" class="w-full h-48 object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-rose font-semibold text-lg mb-2">Sistema de gestión de citas médicas</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Aplicación web desarrollada con PHP y MySQL enfocada en una interfaz moderna, clara y centrada en el usuario.
+          </p>
+          <div class="flex gap-2 mt-2">
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">PHP</span>
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">MySQL</span>
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">UI Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="img/tiendaropa.jpg" alt="Ecommerce de Ropa" class="w-full h-48 object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-rose font-semibold text-lg mb-2">E-commerce de Moda</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Tienda virtual de ropa femenina con carrito de compras, panel de administración y diseño moderno adaptable a móviles.
+          </p>
+          <div class="flex gap-2 mt-2">
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">HTML</span>
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">CSS</span>
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="img/portalio.jpg" alt="Portafolio Personal" class="w-full h-48 object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-rose font-semibold text-lg mb-2">Portafolio Personal</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Sitio web personal creado para mostrar mis proyectos, habilidades y contacto, con un estilo visual suave y profesional.
+          </p>
+          <div class="flex gap-2 mt-2">
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">Tailwind</span>
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">UI/UX</span>
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">HTML</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 4 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="img/veterinaria.jpg" alt="App Veterinaria" class="w-full h-48 object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-rose font-semibold text-lg mb-2">Aplicación Web Veterinaria</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Sistema para la gestión de pacientes y citas veterinarias con registro de clientes y administración de servicios.
+          </p>
+          <div class="flex gap-2 mt-2">
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">PHP</span>
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">MySQL</span>
+            <span class="bg-mint/20 text-mint text-xs px-3 py-1 rounded-full">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-24 bg-white text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl font-serif text-rose mb-6">Contacto</h2>
+      <p class="text-gray-600 mb-6">¿Quieres colaborar en un proyecto o charlar sobre diseño?</p>
+      <p class="text-gray-700"><strong>Email:</strong> <span class="text-rose">ingjuli@gmail.com</span></p>
+      <p class="text-gray-700"><strong>GitHub:</strong> <a href="https://github.com/JULIos" target="_blank" class="text-mint hover:underline">github.com/JULIos</a></p>
+      <p class="text-gray-700"><strong>Ubicación:</strong> Colombia</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 bg-mint text-gray-800 text-center">
+    <p>© 2025 Juliana Osorio — Diseñadora UI en formación</p>
+    <p class="text-sm mt-1 opacity-80">Hecho con HTML, Tailwind y mucho amor ✨</p>
+  </footer>
+
+  <!-- Script menú móvil -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const mobile = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
