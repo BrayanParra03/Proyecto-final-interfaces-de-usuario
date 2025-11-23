@@ -6,7 +6,7 @@
     <div class="row g-4">
       <div class="col-md-6 col-lg-4">
         <div class="service-card">
-          <img src="assets/img/servicio1.jpg" alt="Biotecnología">
+          <img src="assets/img/servicio.jpg" alt="Biotecnología">
           <div class="service-body p-4">
             <h5 class="fw-bold text-success">Biotecnología de la reproducción</h5>
             <ul class="mt-3">
@@ -47,5 +47,14 @@
     </div>
   </div>
 </section>
+
+<!-- Boton wasa -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/573177330876" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
 
 <?php include("footer.php"); ?>

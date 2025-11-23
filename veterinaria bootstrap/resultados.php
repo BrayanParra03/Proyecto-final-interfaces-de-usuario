@@ -37,4 +37,13 @@
   </div>
 </div>
 
+<!-- Boton wasa -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/573177330876" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
 <?php include("footer.php"); ?>

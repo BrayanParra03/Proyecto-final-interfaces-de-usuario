@@ -1,13 +1,13 @@
-
 /* assets/css/style.css
    Diseño inspirado en corporacionraya.org, adaptado a veterinaria (Bootstrap 5.3.2)
-   Paleta: verde #198754, verde oscuro #166a45, blanco, negro.
+   Paleta: Naturaleza Profesional
 */
 
 :root{
   --green: #198754;
-  --green-dark: #166a45;
-  --black: #0b0b0b;
+  --green-dark: #0f5132; /* Cambiado a verde más oscuro */
+  --green-light: #d4edda; /* Nuevo verde claro */
+  --black: #1a1a1a; /* Negro más suave */
   --muted: #6b7280;
   --max-width: 1200px;
   --card-radius: 0.8rem;
@@ -18,11 +18,12 @@
 html,body{height:100%}
 body{
   font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:#0f1724;
-  background:#fff;
+  color: var(--black);
+  background: #f8f9fa; /* Fondo más suave */
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* HERO: full-bleed image with overlay */
@@ -39,7 +40,7 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg, rgba(25,135,84,0.80) 0%, rgba(25,135,84,0.65) 100%);
+  background: linear-gradient(90deg, rgba(15,81,50,0.85) 0%, rgba(25,135,84,0.75) 100%);
   z-index:1;
 }
 .hero-inner{ position:relative; z-index:2; max-width:var(--max-width); margin:0 auto; padding:4rem 1rem; }
@@ -58,15 +59,20 @@ body{
 .btn-hero-secondary{
   background:transparent;
   color:rgba(255,255,255,0.95);
-  border:2px solid rgba(255,255,255,0.12);
+  border:2px solid rgba(255,255,255,0.3);
   padding:0.8rem 1.2rem;
   border-radius:0.6rem;
+  transition: all 0.3s ease;
+}
+.btn-hero-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
 }
 
 /* Section titles */
 .section-title{
   text-align:center;
-  color:var(--green);
+  color:var(--green-dark);
   font-weight:700;
   font-size:1.6rem;
   margin-bottom:1.5rem;
@@ -84,6 +90,7 @@ body{
   background:#fff;
   border-radius:var(--card-radius);
   overflow:hidden;
+  border: 1px solid #e9ecef;
   box-shadow:0 12px 34px rgba(15,23,42,0.08);
   transition:transform .28s ease, box-shadow .28s ease;
   display:flex;
@@ -99,16 +106,18 @@ body{
 .testimonial{
   background:#fff;
   border-radius:0.7rem;
+  border: 1px solid #e9ecef;
   padding:1.25rem;
   box-shadow:0 10px 30px rgba(15,23,42,0.06);
 }
 .testimonial p{ font-style:italic; color:#334155; }
-.testimonial h6{ margin-top:0.75rem; font-weight:700; }
+.testimonial h6{ margin-top:0.75rem; font-weight:700; color: var(--green-dark); }
 
 /* Stats / cases */
 .cases{ display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
 .case-card{
-  background:#f8fafc;
+  background:#fff;
+  border: 1px solid #e9ecef;
   border-radius:0.7rem;
   min-width:160px;
   padding:1.15rem;
@@ -117,16 +126,29 @@ body{
 }
 
 /* Contact cards */
-.contact-card{ border-radius:0.7rem; box-shadow:0 10px 30px rgba(15,23,42,0.06); }
+.contact-card{ 
+  border-radius:0.7rem; 
+  border: 1px solid #e9ecef;
+  box-shadow:0 10px 30px rgba(15,23,42,0.06); 
+}
 
 /* Footer */
-.site-footer{ background:#0b0b0b; color:#CBD5E1; padding:2.75rem 0; }
+.site-footer{ 
+  background: var(--green-dark); 
+  color:#e9ecef; 
+  padding:2.75rem 0; 
+}
 .site-footer a{ color:#fff; text-decoration:none; }
 
 /* Misc */
-.text-muted-custom{ color:var(--muted); }
+.text-muted-custom{ color:#495057 !important; }
 .center-max{ max-width:var(--max-width); margin:0 auto; }
 .img-round{ border-radius:999px; object-fit:cover; }
+
+/* Secciones con fondos alternados */
+.bg-light {
+  background-color: var(--green-light) !important;
+}
 
 /* Spacing tweaks */
 .py-6{ padding-top:3rem !important; padding-bottom:3rem !important; }
@@ -137,9 +159,6 @@ body{
   .hero h1{ font-size:3.2rem; }
   .hero p.lead{ font-size:1.25rem; max-width:650px; }
 }
-
-
-
 
 /* Carrusel Simple para Hero */
 .hero-carousel-container {
@@ -187,8 +206,6 @@ body{
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
-
-
 /* Overlay difuminado para imágenes del carrusel */
 .carousel-item {
   height: 100%;
@@ -204,7 +221,7 @@ body{
   height: 100%;
   background: linear-gradient(
     135deg, 
-    rgba(25, 135, 84, 0.3) 0%, 
+    rgba(15, 81, 50, 0.3) 0%, 
     rgba(0, 0, 0, 0.4) 50%,
     rgba(25, 135, 84, 0.2) 100%
   );
@@ -214,7 +231,6 @@ body{
 .carousel-item img {
   height: 100%;
   object-fit: cover;
-  /* Reducimos el brightness para que el overlay se vea mejor */
   filter: brightness(0.4);
 }
 
@@ -227,5 +243,259 @@ body{
   height: 100%;
   display: flex;
   align-items: center;
-  z-index: 3; /* Mayor que el overlay (z-index: 1) */
+  z-index: 3;
 }
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 28px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+  color: white;
+}
+
+/* Ajustes para navbar fija */
+body {
+    padding-top: 80px; /* Asegura que el contenido no quede detrás de la navbar */
+}
+
+/* Hero section - ajustar para navbar fija */
+.hero-carousel-container {
+    margin-top: -80px; /* Compensa el padding-top del body */
+    min-height: calc(72vh + 80px); /* Ajusta la altura para compensar */
+}
+
+.carousel-inner {
+    height: calc(72vh + 80px);
+}
+
+/* Asegurar que el contenido del hero esté bien posicionado */
+.hero-content {
+    padding-top: 80px; /* Empuja el contenido hacia abajo */
+}
+
+/* Efecto smooth para el scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajustes responsive para móviles */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Menos espacio en móviles */
+    }
+    
+    .hero-carousel-container {
+        margin-top: -70px;
+        min-height: calc(72vh + 70px);
+    }
+    
+    .carousel-inner {
+        height: calc(72vh + 70px);
+    }
+    
+    .hero-content {
+        padding-top: 70px;
+    }
+    
+    .navbar-brand img {
+        height: 35px; /* Logo más pequeño en móviles */
+    }
+}
+
+/* Estilos para modo oscuro en CSS externo también */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .bg-white {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .bg-light {
+  background-color: #2d2d2d !important;
+}
+
+body.dark-mode .service-card,
+body.dark-mode .testimonial,
+body.dark-mode .case-card {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode .section-title {
+  color: #4CAF50;
+}
+
+body.dark-mode .text-muted-custom {
+  color: #aaa !important;
+}
+
+body.dark-mode .hero-content h1,
+body.dark-mode .hero-content .lead {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+body.dark-mode .carousel-item::after {
+  background: linear-gradient(
+    135deg, 
+    rgba(15, 81, 50, 0.5) 0%, 
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(25, 135, 84, 0.4) 100%
+  );
+}
+
+/* Estilos para los Modals de Servicios */
+.modal-content {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  border-bottom: 2px solid #e9ecef;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 1rem 1rem 0 0 !important;
+}
+
+.modal-title {
+  color: var(--green-dark) !important;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+/* Efectos hover para las cards de servicios */
+.service-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15,23,42,0.15);
+}
+
+.service-card:hover .text-primary {
+  color: var(--green) !important;
+}
+
+/* Estilos para listas en modals */
+.modal-body .list-unstyled li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.modal-body .list-unstyled li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive para modals */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 1rem;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .modal-header .modal-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mejoras visuales para dark mode en modals */
+body.dark-mode .modal-content {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+}
+
+body.dark-mode .modal-header {
+  background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+  border-bottom-color: #444;
+}
+
+body.dark-mode .modal-body .bg-light {
+  background-color: #3d3d3d !important;
+  color: #e0e0e0;
+}
+
+body.dark-mode .card {
+  background-color: #3d3d3d;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode .alert-info {
+  background-color: #1a3a4a;
+  border-color: #2a5a6a;
+  color: #e0e0e0;
+}
+
+/* Mejoras para los números en los procesos */
+.bg-success.text-white.rounded-circle {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Estilos para las cards dentro de modals */
+.modal-body .card {
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.modal-body .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Estilos para las estrellas de testimonios */
+.stars {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.stars .bi-star-fill,
+.stars .bi-star-half,
+.stars .bi-star {
+  margin: 0 1px;
+}
+
+/* Efecto hover en las cards de testimonios */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
